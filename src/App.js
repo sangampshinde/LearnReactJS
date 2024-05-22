@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import Profile from './components/Profile';
+
 
 function App() {
  
-
-  
-
   return (
     <div className='App'>
-      <h1>Conditional Rendaring</h1>
-      
+      <h1>Basic Form Validation</h1>
      
     </div>
   );
@@ -19,6 +15,18 @@ export default App;
 
 
 
+// import React, { useState } from 'react';
+// import Profile from './components/Profile';
+
+// function App() {
+//   return (
+//     <div className='App'>
+//       <h1>Conditional Rendaring</h1>
+//       <Profile></Profile>
+//     </div>
+//   );
+// }
+// export default App;
 
 
 
