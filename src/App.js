@@ -1,19 +1,63 @@
-import React, { useState } from 'react';
-import Login from './components/Login';
 
+import React from 'react'
 
 function App() {
- 
   return (
-    <div className='App'>
-      <h1>Basic Form Validation</h1>
-       <Login></Login>
-     
+    <div>
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
+
+
+
+
+
+
+
+// import React from 'react'
+// import User from './components/User'
+// import Members from './components/Members';
+
+// function App() {
+//   function getData(){
+//     alert('hello from app');
+//   }
+//   return (
+//     <div>
+//       <h1>Pass Function As Pass</h1>
+//       <User data={getData}></User>
+//       <div>
+//       <Members data={getData}></Members>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// import React, { useState } from 'react';
+// import Login from './components/Login';
+
+
+// function App() {
+ 
+//   return (
+//     <div className='App'>
+//       <h1>Basic Form Validation</h1>
+//        <Login></Login>
+     
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
 
