@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Login from './components/Login';
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Basic Form Validation</h1>
+       <Login></Login>
      
     </div>
   );
