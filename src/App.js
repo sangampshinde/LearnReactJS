@@ -1,19 +1,64 @@
+import React, { useState } from 'react'
+import User1 from './components/User1'
 
-import React, { Component } from 'react'
-
-export class App extends Component {
-
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
-  
+ 
+function App() {
+    const [name,setName]=useState('anil');
+  return (
+    <div>
+    <h1>Render Life Cycle</h1>
+    <User1 name={name}></User1>
+    <button onClick={()=>{setName('shidhu')}}>Upadate Name</button>
+      
+    </div>
+  )
 }
 
 export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { Component } from 'react'
+
+// export class App extends Component {
+
+//   constructor(){
+//     super()
+//     // console.log('Constructor');
+//     this.state={
+//       data:'anil'
+//     }
+//   }
+
+//   render() {
+//     // console.log('Render');
+//     return ( 
+//       <div>
+//         <h1>Hello {this.state.data}</h1>
+        
+//       </div>
+//     )
+//   }
+
+// }
+
+// export default App
 
 
 
