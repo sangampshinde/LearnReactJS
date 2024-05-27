@@ -1,9 +1,55 @@
 import React from 'react'
 
 function App() {
+  // const students =['Anil','sidhu','sam','peter'];
+
+  const students=[
+    {name:"anil",email:"anil@gmail.com",contact:0},
+    {name:"sidhu",email:"sidhu@gmail.com",contact:111},
+    {name:"sam",email:"sam@gmail.com",contact:222},
+    {name:"peter",email:"peter@gmail.com",contact:333}
+  ]
+    
+
+  
+
+
+  // map looping
+  // students.map((item)=>{
+  //     console.log("My Name is:",item)
+  // })
+  // console.log("---------------------------");
+  // for looping
+  //not support in react
+  //  for(let i=0;i<students.length; i++){
+   
+  //   console.log("My Name is:",students[i]);
+
+  //  }
+
   return (
     <div>
       <h1>Handle list With Array</h1>
+
+      <table border='1px'>
+        <thead >
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((data, index) => (
+            <tr key={index}>
+              <td>{data.name}</td>
+              <td>{data.email}</td>
+              <td>{data.contact}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+       
     </div>
   )
 }
