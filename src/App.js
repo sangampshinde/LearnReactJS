@@ -1,85 +1,310 @@
+// send data from parent to child
 import React from 'react'
+import User3 from './components/User3'
 
 function App() {
-  // const students =['Anil','sidhu','sam','peter'];
 
-  const students=[
-    {name:"anil",email:"anil@gmail.com",contact:0},
-    {name:"sidhu",email:"sidhu@gmail.com",contact:111},
-    {name:"sam",email:"sam@gmail.com",contact:222},
-    {name:"peter",email:"peter@gmail.com",contact:333}
-  ]
-    
-
-  
-
-
-  // map looping
-  // students.map((item)=>{
-  //     console.log("My Name is:",item)
-  // })
-  // console.log("---------------------------");
-  // for looping
-  //not support in react
-  //  for(let i=0;i<students.length; i++){
-   
-  //   console.log("My Name is:",students[i]);
-
-  //  }
+   function parentAlert(){
+    alert('hello')
+   }
 
   return (
     <div>
-      <h1>Handle list With Array</h1>
-
-      <table border='1px'>
-        <thead >
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Contact</th>
-          </tr>
-        </thead>
-        <tbody>
-          {students.map((data, index) => (
-            <tr key={index}>
-              <td>{data.name}</td>
-              <td>{data.email}</td>
-              <td>{data.contact}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-       
+      <h1>Lifting State Up</h1>
+      <User3></User3>
+      
     </div>
   )
 }
 
 export default App
 
+// send data from parent to child
+
+// import React from 'react'
+// import User3 from './components/User3'
+
+// function App() {
+//   let data ='anil sidhu'
+//   return (
+//     <div>
+//       <h1>Lifting State Up</h1>
+//       <User3 name={data}></User3>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+// ---------------------------------
+
+// import React from 'react'
+
+// function App() {
+//   return (
+//     // method-3 to use react fragments [most used]
+//     <>
+//       <h1>React Fragments</h1>
+//     </>
+    
+//   )
+// }
+
+// export default App
 
 
 
+// import React,{Fragment} from 'react'
+
+// function App() {
+//   return (
+//     // method-2 to use react fragments
+//     <Fragment>
+//       <h1>React Fragments</h1>
+//     </Fragment>
+//   )
+// }
+
+// export default App
 
 
 
+// import React from 'react'
+
+// function App() {
+//   return (
+//     // method-1 to use react fragments
+//     <React.Fragment>
+//       <h1>React Fragments</h1>
+//     </React.Fragment>
+//   )
+// }
+
+// export default App
+
+// ------------------------------
+
+// import React from 'react'
+// import ArrUser from './components/ArrUser'
+
+// function App() {
+
+//   const users=[
+//     {name:"anil",email:"anil@gmail.com",contact:0},
+//     {name:"sidhu",email:"sidhu@gmail.com",contact:111},
+//     {name:"sam",email:"sam@gmail.com",contact:222},
+//     {name:"peter",email:"peter@gmail.com",contact:333}
+//   ]
+
+//   return (
+//     <div>
+//       <h1>Reuse Component</h1>
+     
+//       {
+//         users.map((data, i)=>(
+//           <ArrUser  key={i} data={data}/>
+//         ))
+//       }
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+// ------------------------------
+// import React from 'react'
+
+// function App() {
+
+//   const users=[
+//     {name:"anil",email:"anil@gmail.com",address:[
+//       {Hno:100,city:'noida',country:'India'},
+//       {Hno:101,city:'dehli',country:'India'},
+//       {Hno:102,city:'pune',country:'India'}
+
+//     ]},
+//     {name:"sidhu",email:"sidhu@gmail.com",address:[
+//       {Hno:10,city:'mumbia',country:'India'},
+//       {Hno:20,city:'hydrabad',country:'India'},
+//       {Hno:30,city:'bengluru',country:'India'}
+
+//     ]},
+//     {name:"sam",email:"sam@gmail.com",address:[
+//       {Hno:40,city:'sector1',country:'India'},
+//       {Hno:50,city:'7R-cr',country:'India'},
+//       {Hno:60,city:'juhu',country:'India'}
+//     ]},
+//     {name:"peter",email:"peter@gmail.com",address:[
+//       {Hno:70,city:'Nanded',country:'India'},
+//       {Hno:80,city:'CS sambaji N',country:'India'},
+//       {Hno:90,city:'Amravati',country:'India'}
+
+//     ]}
+//   ]
 
 
+//   return (
+//     <div>
+//       <h1>List With Nested List</h1>
+//       <table className="table table-hover">
+//         <tbody>
+//           <tr>
+//           <th>SrNo</th>
+//            <th>Name</th>
+//            <th>Email</th>
+//            <th>Address</th>
+//           </tr>
+//           {
+//           users.map((data,i)=>(
+//             <tr key={i}>
+//             <td>{i+1}</td>
+//             <td>{data.name}</td>
+//             <td>{data.email}</td>
+//             <td>
+//               <table className="table table-hover">
+//                 <tbody>
+//                 <tr>
 
+//                   <th>Hno</th>
+//                   <th>City</th>
+//                   <th>Country</th>
+//                 </tr>
+//               {
+//                 data.address.map((item,j)=>(
+//                   <tr key={j}>
+                  
+//                   <td>{item.Hno}</td>
+//                   <td>{item.city}</td>
+//                   <td>{item.country}</td>
+//                 </tr>
+//                 ))
+//               }
+//               </tbody>
+//               </table>
+//             </td>
+//           </tr>
+//           ))
+//         }
+//         </tbody>
+       
+//       </table>
+//     </div>
+//   )
+// }
+// export default App
 
-
-
-
-
-
-
-
-
+//----------------------------------
 
 
 
 
 
 // import React from 'react'
+
+// function App() {
+
+//   const users=[
+//     {name:"anil",email:"anil@gmail.com",contact:0},
+//     {name:"sidhu",email:"sidhu@gmail.com",contact:111},
+//     {name:"sam",email:"sam@gmail.com",contact:222},
+//     {name:"peter",email:"peter@gmail.com",contact:333}
+//   ]
+
+
+//   return (
+//     <div>
+//       <h1>List With Bootsrap Table</h1>
+//       <table className="table table-hover">
+//       <tbody>
+//       <tr>
+//               <td>Name</td>
+//               <td>Email</td>
+//               <td>Contact</td>
+//       </tr>
+//       {
+//         users.map((data,index)=>(
+//           <tr key={index}>
+//               <td>{data.name}</td>
+//               <td>{data.email}</td>
+//               <td>{data.contact}</td>
+//           </tr>
+//         ))
+//       }
+//       </tbody>
+//       </table>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// -----------------------------
+
+
+// import React from 'react'
+
+// function App() {
+//   // const students =['Anil','sidhu','sam','peter'];
+
+//   const students=[
+//     {name:"anil",email:"anil@gmail.com",contact:0},
+//     {name:"sidhu",email:"sidhu@gmail.com",contact:111},
+//     {name:"sam",email:"sam@gmail.com",contact:222},
+//     {name:"peter",email:"peter@gmail.com",contact:333}
+//   ]
+    
+
+//   // map looping
+//   // students.map((item)=>{
+//   //     console.log("My Name is:",item)
+//   // })
+//   // console.log("---------------------------");
+//   // for looping
+//   //not support in react
+//   //  for(let i=0;i<students.length; i++){
+   
+//   //   console.log("My Name is:",students[i]);
+
+//   //  }
+
+//   return (
+//     <div>
+//       <h1>Handle list With Array</h1>
+
+//       <table border='1px'>
+//         <thead >
+//           <tr>
+//             <th>Name</th>
+//             <th>Email</th>
+//             <th>Contact</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {
+//           students.map((data, index) => (
+//             <tr key={index}>
+//               <td>{data.name}</td>
+//               <td>{data.email}</td>
+//               <td>{data.contact}</td>
+//             </tr>
+//           ))
+//           }
+//         </tbody>
+//       </table>
+       
+//     </div>
+//   )
+// }
+
+// export default App
+
+// --------------------------
+
+//import React from 'react'
 
 // function App() {
 //   return (
