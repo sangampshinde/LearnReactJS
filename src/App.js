@@ -1,23 +1,85 @@
-// send data from parent to child
-import React from 'react'
-import User3 from './components/User3'
+import React, { Component,PureComponent} from 'react'
 
-function App() {
-
-   function parentAlert(){
-    alert('hello')
-   }
-
-  return (
-    <div>
-      <h1>Lifting State Up</h1>
-      <User3></User3>
-      
-    </div>
-  )
+export class App extends PureComponent {
+constructor(){
+  super();
+  this.state={
+    count:1
+  }
 }
 
-export default App
+  render() {
+    console.log('check rerendaring');
+    return (
+      <div>
+        <h1>Pure Component in react</h1>
+        <h2>{this.state.count}</h2>
+        <button onClick={()=>{
+          this.setState({count:1})
+          // this.setState({count:this.state.count+1})
+        }}>Upadate Count</button>
+        
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+
+// pure conponent stop re rendaring our component is state does not change
+// import React, { Component,PureComponent} from 'react'
+
+// export class App extends PureComponent {
+// constructor(){
+//   super();
+//   this.state={
+//     count:1
+//   }
+// }
+
+//   render() {
+//     console.log('check rerendaring');
+//     return (
+//       <div>
+//         <h1>Pure Component in react</h1>
+//         <h2>{this.state.count}</h2>
+//         <button onClick={()=>{
+//           this.setState({count:1})
+//           // this.setState({count:this.state.count+1})
+//         }}>Upadate Count</button>
+        
+//       </div>
+//     )
+//   }
+// }
+
+// export default App
+
+
+
+
+
+// send data from parent to child
+// import React from 'react';
+// import User3 from './components/User3';
+
+// function App() {
+//   function parentAlert(data) {
+//     alert(`Hello, ${data}`);
+//   }
+
+//   return (
+//     <div>
+//       <h1>Lifting State Up</h1>
+//       <User3 alert={parentAlert} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
 
 // send data from parent to child
 
