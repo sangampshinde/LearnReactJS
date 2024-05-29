@@ -1,4 +1,5 @@
 import React, { Component,PureComponent} from 'react'
+import User4 from './components/User4';
 
 export class App extends PureComponent {
 constructor(){
@@ -14,10 +15,7 @@ constructor(){
       <div>
         <h1>Pure Component in react</h1>
         <h2>{this.state.count}</h2>
-        <button onClick={()=>{
-          this.setState({count:1})
-          // this.setState({count:this.state.count+1})
-        }}>Upadate Count</button>
+        
         
       </div>
     )
