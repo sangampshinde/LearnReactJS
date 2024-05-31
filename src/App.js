@@ -1,28 +1,137 @@
-import React, { Component,PureComponent} from 'react'
-import User4 from './components/User4';
+// #42 useRef Hook for forceful dom manipulation in functional component.
+// some times we have to do direct modification in dom rather than using hooks and states then useRef come in to picture.
+import React,{useRef} from 'react'
 
-export class App extends PureComponent {
-constructor(){
-  super();
-  this.state={
-    count:1
+function App() {
+  let inputRef =useRef(null)
+  function handleInput(){
+    console.log('handle input')
   }
+  return (
+    <div>
+      <h1>useRef Hook in React</h1>
+      <input type='text' ref={inputRef}/>
+      <button onClick={handleInput}>Handle Input</button>
+
+    </div>
+  )
 }
 
-  render() {
-    console.log('check rerendaring');
-    return (
-      <div>
-        <h1>Pure Component in react</h1>
-        <h2>{this.state.count}</h2>
-        
-        
-      </div>
-    )
-  }
-}
+export default App
 
-export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------
+
+// // #41focrce ful dom manipulation is done with it 
+// import React, { Component, createRef } from 'react';
+
+// export class App extends Component {
+//   constructor() {
+//     super();
+//     this.inputRef = createRef();
+//   }
+
+//   componentDidMount() {
+//     // console.log(this.inputRef.current.value = '1000');
+//   }
+
+//   getval = () => {
+//     console.log(this.inputRef.current.value);
+//     this.inputRef.current.style.color='red'
+//     this.inputRef.current.style.backgroundColor='green'
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>Ref in React</h1>
+//         <input type='text' ref={this.inputRef} />
+//         <button onClick={this.getval}>Check Ref</button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+
+
+
+// -------------------------------------------
+
+
+// import React,{useState,useMemo} from 'react'
+
+// function App() {
+
+//   const [count,setCount]=useState(0);
+//   const [item,setItem]=useState(10);
+
+//   const multiCountMemo = useMemo(
+//     function multiCount(){
+//     console.log('multiCount');
+//     return count*5;
+//   },[count]);
+
+  
+
+//   return (
+//     <div>
+//       <h1>useMemo Hook in React</h1>
+//       <p>count : {count}</p>
+//       <p>item : {item}</p>
+//       <p>{multiCountMemo}</p>
+//       <button onClick={()=>{setCount(count+1)}}>Update Count</button>
+//       <button onClick={()=>{setItem(item*10)}}>Update item</button>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// --------------------------------------------------------------
+
+// import React, { Component,PureComponent} from 'react'
+// import User4 from './components/User4';
+
+// export class App extends PureComponent {
+// constructor(){
+//   super();
+//   this.state={
+//     count:1
+//   }
+// }
+
+//   render() {
+//     console.log('check rerendaring');
+//     return (
+//       <div>
+//         <h1>Pure Component in react</h1>
+//         <h2>{this.state.count}</h2>
+        
+        
+//       </div>
+//     )
+//   }
+// }
+
+// export default App;
 
 
 
