@@ -1,18 +1,9 @@
-// #42 useRef Hook for forceful dom manipulation in functional component.
-// some times we have to do direct modification in dom rather than using hooks and states then useRef come in to picture.
-import React,{useRef} from 'react'
+import React from 'react'
 
 function App() {
-  let inputRef =useRef(null)
-  function handleInput(){
-    console.log('handle input')
-  }
   return (
     <div>
-      <h1>useRef Hook in React</h1>
-      <input type='text' ref={inputRef}/>
-      <button onClick={handleInput}>Handle Input</button>
-
+      
     </div>
   )
 }
@@ -31,6 +22,139 @@ export default App
 
 
 
+
+
+
+
+
+
+
+// ------------------------------------ 
+
+// #45 UnControlled Component
+// uncontrolled component are those component which is not
+// controlled by react hooks they controlled by dom or other techniques or Ref 
+// import React,{useRef}from 'react'
+
+
+// function App() {
+//   let inputRef =useRef(null)
+//   let inputRef2 =useRef(null);
+
+//   function submitForm(e){
+
+//     e.preventDefault();
+//     console.log('input field 1 value:',inputRef.current.value)
+//     console.log('input field 2 value:',inputRef2.current.value)
+//     let input3 =document.getElementById('input3').value;
+//     console.log('input field 2 value:', input3);
+
+// }
+
+//   return (
+//     <div>
+//       <h1>Uncontrolled Component</h1>
+//       <form onSubmit={submitForm}>
+//       <input ref={inputRef} type='text'/><br/><br/>
+//       <input ref={inputRef2} type='text'/><br/><br/>
+//       <input id='input3' type='text'/><br/><br/>
+//       <button>Submit</button>
+//       </form>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// ----------------------------------
+
+// #44 Controlled Component
+// In React when we control input fields with the help of hooks thos are control components.
+// Uncontrolled Component-those component that directyl handle though Dom.
+// import React,{useState} from 'react'
+  
+// function App() {
+//   let[val,setVal]=useState(0)//<--default value 
+//   let [item,setItem]=useState("")
+//   return (
+//     <div>
+//       <h1>Controlled Component</h1>
+//        <input type='text' value={val} onChange={(e)=>setVal(e.target.value)} />{/*//defaltvalue='000' */}
+//       <p> value 1 : {val}</p>
+//       <input type='text' value={item} onChange={(e)=>setItem(e.target.value)} />
+//       <p> value 2 : {item}</p>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// ---------------------------------------------
+
+// #43 forwardRef in React
+// when our dom component are present in differnt react Component then we want use Dom manipulation 
+// or focrecful dom manipulation then we use forward ref hook 
+// [ for example button in different component and inputbox in different component]
+
+// import React,{useRef}from 'react'
+// import Child from './components/Child'
+
+// function App() {
+// let inputRef = useRef(null);
+// function updateInput(){
+//   inputRef.current.value = 1000;
+//   inputRef.current.style.color = 'green';
+//   inputRef.current.focus();
+// }
+
+//   return (
+//     <div>
+//       <h1>forwardRef in React</h1>
+//       <Child ref={inputRef}></Child>
+//       <br></br>
+//       <button onClick={updateInput}>Upadate Inputbox</button>
+      
+//     </div>
+//   )
+// }
+
+// export default App;
+
+
+// -------------------------------------
+// #42 useRef Hook for forceful dom manipulation in functional component.
+// some times we have to do direct modification in dom rather than using hooks and states then useRef come in to picture.
+// import React,{useRef} from 'react'
+
+// function App() {
+//   let inputRef =useRef(null)
+//   function handleInput(){
+//     console.log('handle input')
+//     // add value to input box
+//     // inputRef.current.value=1000;
+//     // add focus to input box
+//     // inputRef.current.focus();
+//     // to change style
+//     // inputRef.current.style.color='pink';
+//     // display property
+//     inputRef.current.style.display='none';
+
+//   }
+//   return (
+//     <div>
+//       <h1>useRef Hook in React</h1>
+//       <input type='text' ref={inputRef}/>
+//       <button onClick={handleInput}>Handle Input</button>
+
+//     </div>
+//   )
+// }
+
+// export default App;
 
 // ---------------------
 
