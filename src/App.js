@@ -1,22 +1,105 @@
-// React Router v6  #1
-// TO INSTALL REACT ROUTER --> npm i react-router
-// 
+// #2 router links
+
 import React from 'react'
+import { BrowserRouter,Routes,Route} from 'react-router-dom';
+import Home from './router/Home';
+import About from './router/About';
+import NavBar from './router/NavBar';
 
 function App() {
   return (
     <div>
-      <h1> React Router V6+ </h1>
-
+     
+      {/* <h1> React Router V6+ </h1> */}
+      <BrowserRouter>
+      <NavBar/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
+        </Routes>
+        
+      </BrowserRouter>
       
     </div>
   )
 }
 
 export default App
+// ----------------------------------------------------------------
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Link} from 'react-router-dom';
+// import Home from './router/Home';
+// import About from './router/About';
+
+// function App() {
+//   return (
+//     <div>
+//       {/* <h1> React Router Links </h1> */}
+//       <BrowserRouter>
+//       <Link to='/about'>About</Link>
+//       <br/>
+//       <Link to='/'>Home</Link>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//         </Routes>
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+// =====================================================================================
+// React Router v6  #1
+// TO INSTALL REACT ROUTER --> npm install react-router@6 react-router-dom@6
+// 
+// import React from 'react'
+// import { BrowserRouter,Routes,Route} from 'react-router-dom';
+// import Home from './router/Home';
+// import About from './router/About';
+
+// function App() {
+//   return (
+//     <div>
+//       {/* <h1> React Router V6+ </h1> */}
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//         </Routes>
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+// ----------------------------------------
+
+// import React from 'react'
+// import { BrowserRouter,Routes,Route} from 'react-router-dom';
+
+// function App() {
+//   return (
+//     <div>
+//       {/* <h1> React Router V6+ </h1> */}
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path='/home' element={<h1>Home Page</h1>} />
+//         </Routes>
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+
+// export default App
 
 
-// ------------------------------------------
+// =============================================================
 
 // #46 Higher Order Component [HOC]
 // a Component which take other component as Input and return component as Output called HOC
