@@ -1,11 +1,11 @@
-// Page 404
+// dynamic routing with param
+//  
 import React from 'react'
-import { BrowserRouter,Routes,Route} from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
 import Home from './router/Home';
 import About from './router/About';
 import NavBar from './router/NavBar';
-import Page404 from './router/Page404';
-
+// import Page404 from './router/Page404';
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
           {/* <Route path='/*' element={<h1>404 Page</h1>}/> */}
-          <Route path='/*' element={<Page404/>}/>
+          <Route path='/*' element={<Navigate to ='/'/>}/>
+          
         </Routes>
         
       </BrowserRouter>
@@ -25,6 +26,64 @@ function App() {
   )
 }
 export default App
+
+// =========================================================================
+
+// Page 404
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// // import Page404 from './router/Page404';
+
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           {/* <Route path='/*' element={<h1>404 Page</h1>}/> */}
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+          
+//         </Routes>
+        
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+// export default App
+// ----------------------------------------------------
+// import React from 'react'
+// import { BrowserRouter,Routes,Route} from 'react-router-dom';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import Page404 from './router/Page404';
+
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           {/* <Route path='/*' element={<h1>404 Page</h1>}/> */}
+//           <Route path='/*' element={<Page404/>}/>
+//         </Routes>
+        
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+// export default App
 
 // ========================================================================
 // #2 router links
