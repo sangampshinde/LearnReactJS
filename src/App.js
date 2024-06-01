@@ -1,8 +1,13 @@
+// React Router v6  #1
+// TO INSTALL REACT ROUTER --> npm i react-router
+// 
 import React from 'react'
 
 function App() {
   return (
     <div>
+      <h1> React Router V6+ </h1>
+
       
     </div>
   )
@@ -11,25 +16,73 @@ function App() {
 export default App
 
 
+// ------------------------------------------
+
+// #46 Higher Order Component [HOC]
+// a Component which take other component as Input and return component as Output called HOC
+// import React, { useState } from 'react';
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>Higher Order Component [HOC]</h1>
+//       <center style={{ display: 'flex', gap: '20px' }}>
+//         <HOCRed cmp={Counter} />
+//         <HOCGreen cmp={Counter} />
+//         <HOCBlue cmp={Counter} />
+//       </center>
+//     </div>
+//   );
+// }
+
+// function HOCRed(props) {
+//   return (
+//     <div style={{ display: 'block' }}>
+//       <h2>Red Counter</h2>
+//       <div style={{ backgroundColor: 'red', width: '100px', padding: '10px' }}>
+//         <props.cmp />
+//       </div>
+//     </div>
+//   );
+// }
+
+// function HOCGreen(props) {
+//   return (
+//     <div style={{ display: 'block' }}>
+//       <h2>Green Counter</h2>
+//       <div style={{ backgroundColor: 'green', width: '100px', padding: '10px' }}>
+//         <props.cmp />
+//       </div>
+//     </div>
+//   );
+// }
+
+// function HOCBlue(props) {
+//   return (
+//     <div style={{ display: 'block' }}>
+//       <h2>Blue Counter</h2>
+//       <div style={{ backgroundColor: 'blue', width: '100px', padding: '10px' }}>
+//         <props.cmp />
+//       </div>
+//     </div>
+//   );
+// }
+
+// function Counter() {
+//   const [count, setCount] = useState(0);
+//   return (
+//     <div>
+//       <p>{count}</p>
+//       <button onClick={() => setCount(count + 1)}>Update Counter</button>
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
+// ----------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ------------------------------------ 
 
 // #45 UnControlled Component
 // uncontrolled component are those component which is not
