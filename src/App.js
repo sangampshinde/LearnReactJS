@@ -1,21 +1,22 @@
-// #2 router links
-
+// Page 404
 import React from 'react'
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import Home from './router/Home';
 import About from './router/About';
 import NavBar from './router/NavBar';
+import Page404 from './router/Page404';
+
 
 function App() {
   return (
     <div>
-     
-      {/* <h1> React Router V6+ </h1> */}
       <BrowserRouter>
       <NavBar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
+          {/* <Route path='/*' element={<h1>404 Page</h1>}/> */}
+          <Route path='/*' element={<Page404/>}/>
         </Routes>
         
       </BrowserRouter>
@@ -23,8 +24,36 @@ function App() {
     </div>
   )
 }
-
 export default App
+
+// ========================================================================
+// #2 router links
+
+// import React from 'react'
+// import { BrowserRouter,Routes,Route} from 'react-router-dom';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+
+// function App() {
+//   return (
+//     <div>
+     
+//      
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//         </Routes>
+        
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+
+// export default App
 // ----------------------------------------------------------------
 // import React from 'react'
 // import { BrowserRouter,Routes,Route,Link} from 'react-router-dom';
@@ -34,7 +63,7 @@ export default App
 // function App() {
 //   return (
 //     <div>
-//       {/* <h1> React Router Links </h1> */}
+//       
 //       <BrowserRouter>
 //       <Link to='/about'>About</Link>
 //       <br/>
