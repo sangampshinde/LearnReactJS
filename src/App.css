@@ -2,3 +2,20 @@
   text-align: center;
 }
 
+.navbar{
+  text-align: right;
+}
+.navbar li{
+display: inline-block;
+padding: 5px;
+}
+.nav-bar-Link{
+  color: black;
+  text-decoration: none;
+  
+}
+.nav-bar-Link:hover{
+  color: green;
+  
+  
+}

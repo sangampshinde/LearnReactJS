@@ -1,7 +1,8 @@
-// dynamic routing with param
-//  
+// =============================================================================
+// link and nav link and style
 import React from 'react'
 import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+import './App.css';
 import Home from './router/Home';
 import About from './router/About';
 import NavBar from './router/NavBar';
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
-          <Route path='/user' element={<User/>}/>
+          <Route path='/user/:name' element={<User/>}/>
           <Route path='/*' element={<Navigate to ='/'/>}/>
           
         </Routes>
@@ -26,6 +27,35 @@ function App() {
   )
 }
 export default App
+// ==========================================================================
+// dynamic routing with param
+//  
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import User from './router/User';
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           <Route path='/user/:name' element={<User/>}/>
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+          
+//         </Routes>
+        
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+// export default App
 
 // =========================================================================
 

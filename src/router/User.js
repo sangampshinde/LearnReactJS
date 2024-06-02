@@ -1,16 +1,24 @@
+
 import React from 'react'
+import { useParams } from 'react-router'
 
 function User() {
+
+  const params = useParams();
+  const {name} = params;
+  console.log(name); //peter
   return (
     <div>
     
-        <p>this is anils page</p>
+        <p>this is {name} page</p>
       
     </div>
   )
 }
 
 export default User
+// --------------------------------------------
+
 // --------------------------------
 // import React from 'react'
 
