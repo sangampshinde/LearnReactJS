@@ -1,5 +1,6 @@
-// =============================================================================
-// link and nav link and style
+// =========================================================================================
+// Navigation on click and navigation programality
+// 
 import React from 'react'
 import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
 import './App.css';
@@ -7,6 +8,7 @@ import Home from './router/Home';
 import About from './router/About';
 import NavBar from './router/NavBar';
 import User from './router/User';
+import Filter from './router/Filter';
 
 function App() {
   return (
@@ -16,17 +18,99 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
+          <Route path='/filter' element={<Filter/>}/>
           <Route path='/user/:name' element={<User/>}/>
           <Route path='/*' element={<Navigate to ='/'/>}/>
-          
         </Routes>
-        
       </BrowserRouter>
-      
     </div>
   )
 }
-export default App
+export default App;
+// =======================================================================================
+// searchParam  and setSearchparams Hook [react router Hook]
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import './App.css';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import User from './router/User';
+// import Filter from './router/Filter';
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           <Route path='/filter' element={<Filter/>}/>
+//           <Route path='/user/:name' element={<User/>}/>
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+// export default App;
+// =======================================================================================
+// Active Links
+
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import './App.css';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import User from './router/User';
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           <Route path='/user/:name' element={<User/>}/>
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+// export default App
+// =============================================================================
+// link and nav link and style
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import './App.css';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import User from './router/User';
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           <Route path='/user/:name' element={<User/>}/>
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+          
+//         </Routes>
+        
+//       </BrowserRouter>
+      
+//     </div>
+//   )
+// }
+// export default App
 // ==========================================================================
 // dynamic routing with param
 //  
