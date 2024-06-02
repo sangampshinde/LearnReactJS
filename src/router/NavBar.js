@@ -7,6 +7,10 @@ function NavBar() {
         <ul>
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/'>Home</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
+            {/* <li><Link to='/user'>User</Link></li> */}
+            <li><Link to='/user/anil'>Anil</Link></li>
+            <li><Link to='/user/peter'>Peter</Link></li>
         </ul>
       
      

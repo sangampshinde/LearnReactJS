@@ -5,7 +5,7 @@ import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
 import Home from './router/Home';
 import About from './router/About';
 import NavBar from './router/NavBar';
-// import Page404 from './router/Page404';
+import User from './router/User';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
-          {/* <Route path='/*' element={<h1>404 Page</h1>}/> */}
+          <Route path='/user' element={<User/>}/>
           <Route path='/*' element={<Navigate to ='/'/>}/>
           
         </Routes>
