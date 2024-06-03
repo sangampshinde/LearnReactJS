@@ -1,8 +1,11 @@
-
 import React from 'react'
-import { useParams } from 'react-router'
+import { useParams,useLocation} from 'react-router'
 
 function User() {
+  const location =useLocation();
+  console.log(location);
+  
+
 
   const params = useParams();
   const {name} = params;
@@ -17,6 +20,27 @@ function User() {
 }
 
 export default User
+// ===================================================================
+// import React from 'react'
+// import { useParams} from 'react-router'
+
+// function User() {
+  
+
+
+//   const params = useParams();
+//   const {name} = params;
+//   console.log(name); //peter
+//   return (
+//     <div>
+    
+//         <p>this is {name} page</p>
+      
+//     </div>
+//   )
+// }
+
+// export default User
 // --------------------------------------------
 
 // --------------------------------

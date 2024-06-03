@@ -1,4 +1,4 @@
-// nested routing
+// protected route[it is feature]
 
 import React from 'react'
 import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
@@ -8,10 +8,16 @@ import About from './router/About';
 import NavBar from './router/NavBar';
 import User from './router/User';
 import Filter from './router/Filter';
+import Contact from './router/Contact';
+import Channel from'./router/Channel';
+import Company from'./router/Company';
+import Other from'./router/Other';
+
 
 function App() {
   return (
     <div>
+
       <BrowserRouter>
       <NavBar/>
         <Routes>
@@ -20,12 +26,96 @@ function App() {
           <Route path='/filter' element={<Filter/>}/>
           <Route path='/user/:name' element={<User/>}/>
           <Route path='/*' element={<Navigate to ='/'/>}/>
+          <Route path='/contact/' element={<Contact/>}>
+            <Route path='company' element={<Company/>}/>
+            <Route path='channel' element={<Channel/>}/>
+            <Route path='other' element={<Other/>}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
   )
 }
 export default App;
+// ==================================================================================
+// useLocation Route  
+// it will provide all data go from this page from route [ex state ,param ,] 
+import React from 'react'
+import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+import './App.css';
+import Home from './router/Home';
+import About from './router/About';
+import NavBar from './router/NavBar';
+import User from './router/User';
+import Filter from './router/Filter';
+import Contact from './router/Contact';
+import Channel from'./router/Channel';
+import Company from'./router/Company';
+import Other from'./router/Other';
+
+
+function App() {
+  return (
+    <div>
+
+      <BrowserRouter>
+      <NavBar/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/filter' element={<Filter/>}/>
+          <Route path='/user/:name' element={<User/>}/>
+          <Route path='/*' element={<Navigate to ='/'/>}/>
+          <Route path='/contact/' element={<Contact/>}>
+            <Route path='company' element={<Company/>}/>
+            <Route path='channel' element={<Channel/>}/>
+            <Route path='other' element={<Other/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
+export default App;
+
+// =================================================================================================
+// nested routing
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import './App.css';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import User from './router/User';
+// import Filter from './router/Filter';
+// import Contact from './router/Contact';
+// import Channel from'./router/Channel';
+// import Company from'./router/Company';
+// import Other from'./router/Other';
+
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           <Route path='/filter' element={<Filter/>}/>
+//           <Route path='/user/:name' element={<User/>}/>
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+//           <Route path='/contact/' element={<Contact/>}>
+//             <Route path='company' element={<Company/>}/>
+//             <Route path='channel' element={<Channel/>}/>
+//             <Route path='other' element={<Other/>}/>
+//           </Route>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+// export default App;
 // =========================================================================================
 // Navigation on click and navigation programality
 // 
