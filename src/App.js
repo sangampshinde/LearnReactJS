@@ -1,6 +1,5 @@
-// =========================================================================================
-// Navigation on click and navigation programality
-// 
+// nested routing
+
 import React from 'react'
 import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
 import './App.css';
@@ -27,6 +26,35 @@ function App() {
   )
 }
 export default App;
+// =========================================================================================
+// Navigation on click and navigation programality
+// 
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import './App.css';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import User from './router/User';
+// import Filter from './router/Filter';
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/about' element={<About/>}/>
+//           <Route path='/filter' element={<Filter/>}/>
+//           <Route path='/user/:name' element={<User/>}/>
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+// export default App;
 // =======================================================================================
 // searchParam  and setSearchparams Hook [react router Hook]
 // import React from 'react'
@@ -53,7 +81,7 @@ export default App;
 //       </BrowserRouter>
 //     </div>
 //   )
-// }
+// } 
 // export default App;
 // =======================================================================================
 // Active Links
