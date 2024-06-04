@@ -9,6 +9,7 @@ function NavBar() {
             <li><NavLink className='nav-bar-Link' to='/about'>About</NavLink></li>
             <li><NavLink className='nav-bar-Link' to='/contact'>Contact</NavLink></li>
             <li><NavLink className='nav-bar-Link' to='/filter'>Filter</NavLink></li>
+            <li><NavLink className='nav-bar-Link' to='/login'>Login</NavLink></li>
         </ul>
     </div>
   )
