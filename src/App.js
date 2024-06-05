@@ -1,18 +1,19 @@
-// routing with example
+// routing with example with best practise.
 import React from 'react'
-import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
+import Nav from './routing/Nav'
+
 
 function App() {
   return (
     <div>
-      <Router>
-        <Link to='/home'>Home Page</Link><br/>
-        <Link to='/about'>About Page</Link>
+      <Nav></Nav>
+        
       <Routes>
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/about' element={<About/>}></Route>
       </Routes>
-      </Router>
+      
     </div>
   )
 }
