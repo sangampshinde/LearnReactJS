@@ -1,46 +1,130 @@
-// protected route[it is feature]
-
+// routing with example
 import React from 'react'
-import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
-import './App.css';
-import Home from './router/Home';
-import About from './router/About';
-import NavBar from './router/NavBar';
-import User from './router/User';
-import Filter from './router/Filter';
-import Contact from './router/Contact';
-import Channel from'./router/Channel';
-import Company from'./router/Company';
-import Other from'./router/Other';
-import Login from './router/Login';
-import ProtedRoute from './router/ProtedRoute';
-
+import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
 
 function App() {
   return (
     <div>
-
-      <BrowserRouter>
-      <NavBar/>
-        <Routes>
-          
-          <Route path='/' element={<ProtedRoute Component={Home}/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/about' element={<ProtedRoute Component={About}/>}/>
-          <Route path='/filter' element={<ProtedRoute Component={Filter}/>}/>
-          <Route path='/user/:name' element={<User/>}/>
-          <Route path='/*' element={<Navigate to ='/'/>}/>
-          <Route path='/contact/' element={<Contact/>}>
-            <Route path='company' element={<Company/>}/>
-            <Route path='channel' element={<Channel/>}/>
-            <Route path='other' element={<Other/>}/>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Router>
+        <Link to='/home'>Home Page</Link><br/>
+        <Link to='/about'>About Page</Link>
+      <Routes>
+        <Route path='/home' element={<Home/>}></Route>
+        <Route path='/about' element={<About/>}></Route>
+      </Routes>
+      </Router>
     </div>
   )
 }
+
+function Home() {
+  return(
+    <div>
+      <h1>Home component</h1>
+      <p>This is My Home Page</p>
+    </div>
+  )
+}
+
+function About() {
+  return(
+    <div>
+      <h1>About component</h1>
+      <p>This is My About Page</p>
+    </div>
+
+  )
+  
+}
+
 export default App;
+// =========================================================================================
+// Routing SetUp #47
+
+// import React from 'react'
+// import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
+
+// function App() {
+//   return (
+//     <div>
+//       <Router>
+//         <Link to='/home'>Home Page</Link><br/>
+//         <Link to='/about'>About Page</Link>
+//       <Routes>
+//         <Route path='/home' element={<Home/>}></Route>
+//         <Route path='/about' element={<About/>}></Route>
+//       </Routes>
+//       </Router>
+//     </div>
+//   )
+// }
+
+// function Home() {
+//   return(
+//     <div>
+//       <h1>Home component</h1>
+//       <p>This is My Home Page</p>
+//     </div>
+//   )
+// }
+
+// function About() {
+//   return(
+//     <div>
+//       <h1>About component</h1>
+//       <p>This is My About Page</p>
+//     </div>
+
+//   )
+  
+// }
+
+// export default App;
+
+// ================================================================================================
+// protected route[it is feature]
+
+// import React from 'react'
+// import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+// import './App.css';
+// import Home from './router/Home';
+// import About from './router/About';
+// import NavBar from './router/NavBar';
+// import User from './router/User';
+// import Filter from './router/Filter';
+// import Contact from './router/Contact';
+// import Channel from'./router/Channel';
+// import Company from'./router/Company';
+// import Other from'./router/Other';
+// import Login from './router/Login';
+// import ProtedRoute from './router/ProtedRoute';
+
+
+// function App() {
+//   return (
+//     <div>
+
+//       <BrowserRouter>
+//       <NavBar/>
+//         <Routes>
+          
+//           <Route path='/' element={<ProtedRoute Component={Home}/>}/>
+//           <Route path='/login' element={<Login/>}/>
+//           <Route path='/about' element={<ProtedRoute Component={About}/>}/>
+//           <Route path='/filter' element={<ProtedRoute Component={Filter}/>}/>
+//           <Route path='/user/:name' element={<User/>}/>
+//           <Route path='/*' element={<Navigate to ='/'/>}/>
+//           <Route path='/contact/' element={<Contact/>}>
+//             <Route path='company' element={<Company/>}/>
+//             <Route path='channel' element={<Channel/>}/>
+//             <Route path='other' element={<Other/>}/>
+//           </Route>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+// export default App;
 // ==================================================================================
 // useLocation Route  
 // it will provide all data go from this page from route [ex state ,param ,] 
