@@ -1,36 +1,64 @@
-// routing with example with best practise.
+// 404 PAGE  
 import React from 'react'
-import { Route, Routes} from 'react-router-dom'
-import Nav from './routing/Nav'
-
+import {BrowserRouter as Router,} from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Nav></Nav>
-        
-      <Routes>
-        <Route path='/home' element={<Home/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-      </Routes>
-      
+      <Router>
+
+
+      </Router>
     </div>
   )
 }
 
-
+function Home() {
+  return(
+    <div>
+      <h1>Home component</h1>
+      <p>This is My Home Page</p>
+    </div>
+  )
+}
+  
 function About() {
   return(
     <div>
       <h1>About component</h1>
       <p>This is My About Page</p>
     </div>
-
   )
-  
 }
 
-export default App;
+export default App
+
+
+// =======================================================================================================
+// routing with example with best practise.
+// import React from 'react'
+// import { Route, Routes} from 'react-router-dom'
+// import Nav from './routing/Nav'
+// import Home from './routing/Home'
+// import About from './routing/About'
+
+
+// function App() {
+//   return (
+//     <div>
+//       <Nav></Nav>
+        
+//       <Routes>
+        
+//         <Route path='/' element={<Home/>} exact={true}></Route>
+//         {/* here we can put dirsct html also insted of component */}
+//         <Route path='/about' element={<About/>}></Route>
+//       </Routes>
+      
+//     </div>
+//   )
+// }
+// export default App;
 // =========================================================================================
 // Routing SetUp #47
 
