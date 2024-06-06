@@ -1,37 +1,110 @@
-// 404 PAGE  
-import React from 'react'
-import {BrowserRouter as Router,} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom'
+import User from './routing/User';
+
+let users = [
+  { id: 1, name: 'anil', email: 'anil@gmail.com' },
+  { id: 2, name: 'tony', email: 'tony@gmail.com' },
+  { id: 3, name: 'peter', email: 'peter@gmail.com' },
+  { id: 4, name: 'roy', email: 'roy@gmail.com' }
+];
 
 function App() {
   return (
     <div>
+      <h1>Dynamic Routing</h1>
       <Router>
-
-
+      {users.map((user) => {
+        return (
+          <div key={user.id}>
+            <Link to={'/user/'+user.id}><h3>{user.name}</h3></Link>
+          </div>
+        );
+      })}
       </Router>
     </div>
-  )
+  );
 }
 
-function Home() {
-  return(
-    <div>
-      <h1>Home component</h1>
-      <p>This is My Home Page</p>
-    </div>
-  )
-}
-  
-function About() {
-  return(
-    <div>
-      <h1>About component</h1>
-      <p>This is My About Page</p>
-    </div>
-  )
-}
+export default App;
+// ----------------------------------------------------------
+// import React from 'react';
 
-export default App
+// let users = [
+//   { id: 1, name: 'anil', email: 'anil@gmail.com' },
+//   { id: 2, name: 'tony', email: 'tony@gmail.com' },
+//   { id: 3, name: 'peter', email: 'peter@gmail.com' },
+//   { id: 4, name: 'roy', email: 'roy@gmail.com' }
+// ];
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>Dynamic Routing</h1>
+
+//       {users.map((user) => {
+//         return (
+//           <div key={user.id}>
+//             <a href={'/user/'+user.id}><h3>{user.name}</h3></a>
+//           </div>
+//         );
+//       })}
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// =========================================================================================================
+// // 404 PAGE  
+// import React from 'react';
+// import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+
+// function App() {
+//   return (
+//     <div>
+//       <Router>
+//         <Link to="/">Home</Link><br/>
+//         <Link to="/about">About</Link>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/about" element={<About />} />
+//           <Route path="*" element={<PageNotFound />} />
+//         </Routes>
+//       </Router>
+//     </div>
+//   );
+// }
+
+// function Home() {
+//   return (
+//     <div>
+//       <h1>Home component</h1>
+//       <p>This is My Home Page</p>
+//     </div>
+//   );
+// }
+
+// function About() {
+//   return (
+//     <div>
+//       <h1>About component</h1>
+//       <p>This is My About Page</p>
+//     </div>
+//   );
+// }
+
+// function PageNotFound() {
+//   return (
+//     <div>
+//       <h1>404 Page Not Found</h1>
+//     </div>
+//   );
+// }
+
+// export default App;
+
 
 
 // =======================================================================================================
