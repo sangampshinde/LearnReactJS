@@ -1,69 +1,59 @@
+
+// ==============================================================================================
 // GET API Call 
 // always use call you api in state called useEffect
 
-import React, { useEffect, useState } from 'react';
 
-function App() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+// import React, { useEffect,useState } from 'react'
 
-  useEffect(() => {
-    setLoading(true);
-    fetch("https://fakestoreapi.com/products")
-     .then((result) => result.json())
-     .then((res) => {
-        setData(res);
-        setLoading(false);
-      })
-     .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  }, []);
+// function App() {
 
-  console.log(data);
+//   const [data,setData] = useState([]);
 
-  return (
-    <div>
-      <h1>GET API Call</h1>
-      { 
-      loading ? 
-      (
-        <p>Loading...</p>
-      ) 
-      : 
-      (
-        <table border="2px">
-          <thead>
-            <tr>
-              <th>id</th>
-              <th>title</th>
-              <th>description</th>
-              <th>price</th>
-              <th>rating</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((product) => (
-              <tr key={product.id}>
-                <td>{product.id}</td>
-                <td>{product.title}</td>
-                <td>{product.description}</td>
-                <td>{product.price}</td>
-                <td>{product.rating.rate}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )
-      }
-      {error && <p>Error: {error.message}</p>}
-    </div>
-  );
-}
+//   useEffect(()=>{
+//     fetch("https://fakestoreapi.com/products").then((result)=>{
+//                result.json().then((res,req)=>{
+//                 // console.log('result',res);
+//                 setData(res);
+      
+//                })
+//         })
+//   },[])
 
-export default App;
+//   console.log(data)
+
+//   return(
+//     <div>
+//     <h1>GET API Call</h1>
+
+//     <table border='2px'>
+//       <tr>
+//         <th>id</th>
+//         <th>title</th>
+//         <th>description</th>
+//         <th>price</th>
+//         <th>rating</th>
+//       </tr>
+      
+//        {
+//         data.map((product)=>(
+//       <tr>
+//         <td>{product.id}</td>
+//         <td>{product.title}</td>
+//         <td>{product.description}</td>
+//         <td>{product.price}</td>
+//         <td>{product.rating.rate}</td>
+
+//       </tr>
+
+//         ))
+//        }
+//        </table>
+//        </div>
+//   )
+
+// }
+// export default App;
 
 // -------------------------------------------------------------------------------------
 // but this npt the standered way to call api
