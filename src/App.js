@@ -1,15 +1,90 @@
-import React from 'react'
+// GET API Call 
+// always use call you api in state called useEffect
+
+import React, { useEffect, useState } from 'react';
 
 function App() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("https://fakestoreapi.com/products")
+     .then((result) => result.json())
+     .then((res) => {
+        setData(res);
+        setLoading(false);
+      })
+     .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  console.log(data);
+
   return (
     <div>
       <h1>GET API Call</h1>
-      
+      { 
+      loading ? 
+      (
+        <p>Loading...</p>
+      ) 
+      : 
+      (
+        <table border="2px">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>title</th>
+              <th>description</th>
+              <th>price</th>
+              <th>rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((product) => (
+              <tr key={product.id}>
+                <td>{product.id}</td>
+                <td>{product.title}</td>
+                <td>{product.description}</td>
+                <td>{product.price}</td>
+                <td>{product.rating.rate}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )
+      }
+      {error && <p>Error: {error.message}</p>}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
+// -------------------------------------------------------------------------------------
+// but this npt the standered way to call api
+// import React from 'react'
+
+// function App() {
+//   fetch("https://api.thecatapi.com/v1/images/search?limit=10").then((result)=>{
+//          result.json().then((res,req)=>{
+//           console.log('result',res);
+
+//          })
+//   })
+//   return (
+//     <div>
+//       <h1>GET API Call</h1>
+      
+//     </div>
+//   )
+// }
+
+// export default App  
 
 //======================================================================================================
 // import React from 'react';
