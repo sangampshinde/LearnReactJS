@@ -1,32 +1,49 @@
-import React from 'react';
-import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom'
-import User from './routing/User';
-
-let users = [
-  { id: 1, name: 'anil', email: 'anil@gmail.com' },
-  { id: 2, name: 'tony', email: 'tony@gmail.com' },
-  { id: 3, name: 'peter', email: 'peter@gmail.com' },
-  { id: 4, name: 'roy', email: 'roy@gmail.com' }
-];
+import React from 'react'
 
 function App() {
   return (
     <div>
-      <h1>Dynamic Routing</h1>
-      <Router>
-      {users.map((user) => {
-        return (
-          <div key={user.id}>
-            <Link to={'/user/'+user.id}><h3>{user.name}</h3></Link>
-          </div>
-        );
-      })}
-      </Router>
+      <h1>GET API Call</h1>
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+//======================================================================================================
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import User from './routing/User';
+
+// let users = [
+//   { id: 1, name: 'anil', email: 'anil@gmail.com' },
+//   { id: 2, name: 'tony', email: 'tony@gmail.com' },
+//   { id: 3, name: 'peter', email: 'peter@gmail.com' },
+//   { id: 4, name: 'roy', email: 'roy@gmail.com' }
+// ];
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>Dynamic Routing</h1>
+//       <Router>
+//         {users.map((user) => {
+//           return (
+//             <div key={user.id}>
+//               <Link to={`/user/${user.id}`}><h3>{user.name}</h3></Link>
+//             </div>
+//           );
+//         })}
+//         <Routes>
+//           <Route path="/user/:id" element={<User />} />
+//         </Routes>
+//       </Router>
+//     </div>
+//   );
+// }
+
+// export default App;
 // ----------------------------------------------------------
 // import React from 'react';
 
