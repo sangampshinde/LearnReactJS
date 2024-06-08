@@ -1,3 +1,214 @@
+// Pre-Filled Form
+import React, { useEffect,useState } from 'react'
+
+function App() {
+
+  const [data,setData] = useState([]);
+
+  useEffect(()=>{
+    getList ()
+  },[])
+
+  // console.log(data)
+
+function getList (){
+  fetch("http://localhost:2000/users").then((result)=>{
+    result.json().then((res,req)=>{
+     // console.log('result',res);
+     setData(res);
+    })
+})
+}
+
+
+  function deleteUser(id) {
+      // console.log(id)
+
+      fetch(`http://localhost:2000/users/${id}`,
+        {
+        method:'DELETE'
+        })
+        .then((result)=>{
+        result.json().then((res)=>{
+          console.log(res)
+          getList ();
+        })
+
+      })
+      
+  }
+  
+  return(
+    <div>
+    <h1>Pre Filled Form</h1>
+
+    <table border='2px'>
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>age</th>
+        <th>mobile</th>
+        <th>operation</th>
+      </tr>
+      </thead>
+      <tbody>
+       {
+        data.map((user,i)=>(
+      <tr key={user.id}>
+        <td>{i+1}</td>
+        <td>{user.name}</td>
+        <td>{user.email}</td>
+        <td>{user.age}</td>
+        <td>{user.mobile}</td>
+        <td><button onClick={()=>{deleteUser(user.id)}}>Delete</button></td>
+
+      </tr>
+
+        ))
+       }
+       </tbody>
+       </table>
+       <div>
+        <input type='text' ></input>
+       </div>
+       </div>
+  )
+
+}
+export default App;
+// ===========================================================================
+// DELETE API in React
+
+// import React, { useEffect,useState } from 'react'
+
+// function App() {
+
+//   const [data,setData] = useState([]);
+
+//   useEffect(()=>{
+//     getList ()
+//   },[])
+
+//   // console.log(data)
+
+// function getList (){
+//   fetch("http://localhost:2000/users").then((result)=>{
+//     result.json().then((res,req)=>{
+//      // console.log('result',res);
+//      setData(res);
+//     })
+// })
+// }
+
+
+//   function deleteUser(id) {
+//       // console.log(id)
+
+//       fetch(`http://localhost:2000/users/${id}`,
+//         {
+//         method:'DELETE'
+//         })
+//         .then((result)=>{
+//         result.json().then((res)=>{
+//           console.log(res)
+//           getList ();
+//         })
+
+//       })
+      
+//   }
+  
+//   return(
+//     <div>
+//     <h1>GET API Call</h1>
+
+//     <table border='2px'>
+//       <thead>
+//       <tr>
+//         <th>id</th>
+//         <th>Name</th>
+//         <th>Email</th>
+//         <th>age</th>
+//         <th>mobile</th>
+//         <th>operation</th>
+//       </tr>
+//       </thead>
+//       <tbody>
+//        {
+//         data.map((user,i)=>(
+//       <tr key={user.id}>
+//         <td>{i+1}</td>
+//         <td>{user.name}</td>
+//         <td>{user.email}</td>
+//         <td>{user.age}</td>
+//         <td>{user.mobile}</td>
+//         <td><button onClick={()=>{deleteUser(user.id)}}>Delete</button></td>
+
+//       </tr>
+
+//         ))
+//        }
+//        </tbody>
+//        </table>
+//        </div>
+//   )
+
+// }
+// export default App;
+// ==========================================================================================================
+// POST API method
+
+// import React, { useState } from 'react'
+
+
+// function App() {
+
+//   const[name,setName]=useState('');
+//   const[age,setAge]=useState(0);
+//   const[email,setEmail]=useState('');
+//   const[mobile,setMobile]=useState(0);
+
+//   function saveUser(){
+    
+//     // console.log({name,email,age,mobile})
+//     let data = {name,email,age,mobile}
+//     console.log(data)
+
+    
+//     fetch('http://localhost:2000/users',{
+//       method:'POST',
+//       headers:{
+//         'Accept':'Application/json',
+//         'Content-type':'Application/json'
+//       },
+//       body:JSON.stringify(data)
+//     }).then((result)=>{
+//        console.log(result)
+//     })
+
+//   }
+
+//   return (
+//     <div>
+//       <h1>POST API method</h1>
+//       <input type='text' name='name' value={name} onChange={(e)=>{setName(e.target.value)}} placeholder='name'></input>
+//       <br></br>
+//       <br></br>
+//       <input type='number' name='age' value={age} onChange={(e)=>{setAge(e.target.value)}} placeholder='age' ></input>
+//       <br></br>
+//       <br></br>
+//       <input type='email' name='email' value={email} onChange={(e)=>{setEmail(e.target.value)}} placeholder='email'></input>
+//       <br></br>
+//       <br></br>
+//       <input type='number' name='mobile' value={mobile}  onChange={(e)=>{setMobile(e.target.value)}} placeholder='mobile no'></input>
+//       <button type='button' onClick={saveUser}>NewUser</button>      
+//     </div>
+//   )
+// }
+
+// export default App
 
 // ==============================================================================================
 // GET API Call 
