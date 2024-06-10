@@ -1,83 +1,281 @@
-// Pre-Filled Form
-import React, { useEffect,useState } from 'react'
+// Previous State In Functional Component
+
+import React from 'react'
 
 function App() {
-
-  const [data,setData] = useState([]);
-
-  useEffect(()=>{
-    getList ()
-  },[])
-
-  // console.log(data)
-
-function getList (){
-  fetch("http://localhost:2000/users").then((result)=>{
-    result.json().then((res,req)=>{
-     // console.log('result',res);
-     setData(res);
-    })
-})
-}
-
-
-  function deleteUser(id) {
-      // console.log(id)
-
-      fetch(`http://localhost:2000/users/${id}`,
-        {
-        method:'DELETE'
-        })
-        .then((result)=>{
-        result.json().then((res)=>{
-          console.log(res)
-          getList ();
-        })
-
-      })
-      
-  }
-  
-  return(
+  return (
     <div>
-    <h1>Pre Filled Form</h1>
-
-    <table border='2px'>
-      <thead>
-      <tr>
-        <th>id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>age</th>
-        <th>mobile</th>
-        <th>operation</th>
-      </tr>
-      </thead>
-      <tbody>
-       {
-        data.map((user,i)=>(
-      <tr key={user.id}>
-        <td>{i+1}</td>
-        <td>{user.name}</td>
-        <td>{user.email}</td>
-        <td>{user.age}</td>
-        <td>{user.mobile}</td>
-        <td><button onClick={()=>{deleteUser(user.id)}}>Delete</button></td>
-
-      </tr>
-
-        ))
-       }
-       </tbody>
-       </table>
-       <div>
-        <input type='text' ></input>
-       </div>
-       </div>
+      
+    </div>
   )
-
 }
-export default App;
+
+export default App
+
+
+
+
+
+
+
+
+
+// ========================================================================================================
+// PUT API in React
+// import React, { useEffect,useState } from 'react'
+
+// function App() {
+
+//   const [data,setData] = useState([]);
+//   const [name,setName]=useState('');
+ 
+//   const [email,setEmail]=useState('');
+//   const [mobile,setMobile]=useState('');
+//   const [userId,setUserId]=useState(null)
+
+//   useEffect(()=>{
+//     getList ()
+//   },[])
+
+//   // console.log(data)
+
+// function getList (){
+//   fetch("http://localhost:2000/users").then((result)=>{
+//     result.json().then((res,req)=>{
+//      // console.log('result',res);
+//      setData(res);
+//      setName(res[0].name)
+//      setEmail(res[0].email)
+//      setMobile(res[0].mobile)
+    
+//      setUserId(res[0].id)
+//     })
+// })
+// }
+
+
+//   function deleteUser(id) {
+//       // console.log(id)
+
+//       fetch(`http://localhost:2000/users/${id}`,
+//         {
+//         method:'DELETE'
+//         })
+//         .then((result)=>{
+//         result.json().then((res)=>{
+//           console.log(res)
+//           getList ();
+//         })
+
+//       })
+      
+//   }
+
+//   function selectUser (id) {
+//     // console.log(data[id-1])
+//     let item = data[id-1];
+//     //  setName(data[id-1].name)
+//     //  setEmail(data[id-1].email)
+//     //  setMobile(data[id-1].mobile)
+//      setName(item.name)
+//      setEmail(item.email)
+//      setMobile(item.mobile)
+//      setUserId(item.id)
+    
+//   }
+
+//   function updateUser(){
+//     // console.log(name,email,mobile,userId);
+
+//     let item = {name,email,mobile,userId}
+//     fetch(`http://localhost:2000/users/${userId}`,
+//       {
+//       method:'PUT',
+//       headers:{
+//         'Accept':'application.json',
+//         'Content-Type':'application.json'
+//       },
+//       body:JSON.stringify(item)
+      
+//       })
+//       .then((result)=>{
+//       result.json().then((res)=>{
+//         console.log(res)
+//         getList ();
+//       })
+
+//     })
+//   }
+  
+//   return(
+//     <div>
+//     <h1>Pre Filled Form</h1>
+//     <div>
+//         <input type='text'  value={name} onChange={(e)=>{setName(e.target.value)}}></input>
+//         <br></br>
+//         <br></br>
+//         <input type='email'  value={email} onChange={(e)=>{setEmail(e.target.value)}}></input>
+//         <br></br>
+//         <br></br>
+//         <input type='number'value={mobile} onChange={(e)=>{setMobile(e.target.value)}}></input>
+//         <br></br>
+//         <br></br>
+//        <button onClick={updateUser}>Update User</button>
+//        <br></br>
+//         <br></br>
+//        </div>
+
+//     <table border='2px'>
+//       <thead>
+//       <tr>
+//         <th>id</th>
+//         <th>Name</th>
+//         <th>Email</th>
+        
+//         <th>mobile</th>
+//         <th>operation</th>
+//       </tr>
+//       </thead>
+//       <tbody>
+//        {
+//         data.map((user,i)=>(
+//       <tr key={i+1}>
+//         <td>{i+1}</td>
+//         <td>{user.name}</td>
+//         <td>{user.email}</td>
+        
+//         <td>{user.mobile}</td>
+//         <td><button onClick={()=>{deleteUser(user.id)}}>Delete</button></td>
+//         <td><button onClick={()=>{selectUser(i+1)}}>Update</button></td>
+
+//       </tr>
+
+//         ))
+//        }
+//        </tbody>
+//        </table>
+       
+//        </div>
+//   )
+
+// }
+// export default App;
+
+// ========================================================================================================
+
+// Pre-Filled Form
+// import React, { useEffect,useState } from 'react'
+
+// function App() {
+
+//   const [data,setData] = useState([]);
+//   const [name,setName]=useState('');
+//   const [email,setEmail]=useState('');
+//   const [mobile,setMobile]=useState('');
+
+
+//   useEffect(()=>{
+//     getList ()
+//   },[])
+
+//   // console.log(data)
+
+// function getList (){
+//   fetch("http://localhost:2000/users").then((result)=>{
+//     result.json().then((res,req)=>{
+//      // console.log('result',res);
+//      setData(res);
+//      setName(res[0].name)
+//      setEmail(res[0].email)
+//      setMobile(res[0].mobile)
+//     })
+// })
+// }
+
+
+//   function deleteUser(id) {
+//       // console.log(id)
+
+//       fetch(`http://localhost:2000/users/${id}`,
+//         {
+//         method:'DELETE'
+//         })
+//         .then((result)=>{
+//         result.json().then((res)=>{
+//           console.log(res)
+//           getList ();
+//         })
+
+//       })
+      
+//   }
+
+//   function selectUser (id) {
+//     // console.log(data[id-1])
+//     let item = data[id-1];
+//     //  setName(data[id-1].name)
+//     //  setEmail(data[id-1].email)
+//     //  setMobile(data[id-1].mobile)
+//      setName(item.name)
+//      setEmail(item.email)
+//      setMobile(item.mobile)
+
+
+//   }
+  
+//   return(
+//     <div>
+//     <h1>Pre Filled Form</h1>
+//     <div>
+//         <input type='text'  value={name}></input>
+//         <br></br>
+//         <br></br>
+//         <input type='email'  value={email}></input>
+//         <br></br>
+//         <br></br>
+//         <input type='number'value={mobile} ></input>
+//         <br></br>
+//         <br></br>
+//        <button type=''>Update</button>
+//        <br></br>
+//         <br></br>
+//        </div>
+
+//     <table border='2px'>
+//       <thead>
+//       <tr>
+//         <th>id</th>
+//         <th>Name</th>
+//         <th>Email</th>
+//         <th>age</th>
+//         <th>mobile</th>
+//         <th>operation</th>
+//       </tr>
+//       </thead>
+//       <tbody>
+//        {
+//         data.map((user,i)=>(
+//       <tr key={i+1}>
+//         <td>{i+1}</td>
+//         <td>{user.name}</td>
+//         <td>{user.email}</td>
+//         <td>{user.age}</td>
+//         <td>{user.mobile}</td>
+//         <td><button onClick={()=>{deleteUser(user.id)}}>Delete</button></td>
+//         <td><button onClick={()=>{selectUser(i+1)}}>Update</button></td>
+
+//       </tr>
+
+//         ))
+//        }
+//        </tbody>
+//        </table>
+       
+//        </div>
+//   )
+
+// }
+// export default App;
 // ===========================================================================
 // DELETE API in React
 
