@@ -1,10 +1,9 @@
-// Previous State In Functional Component
-
 import React from 'react'
 
 function App() {
   return (
     <div>
+      <h1> Previous Props  and how to use with Hooks </h1>
       
     </div>
   )
@@ -12,10 +11,73 @@ function App() {
 
 export default App
 
+// -------------------------------------------------------------------------------------------------------
 
+// // Previous State In Functional Component
+// // useStete setting varivale contain a callback function also as shown in example
 
+// import React,{useState} from 'react'
 
+// function App() {
+//   const [count,setCount]=useState(0);
 
+//   function upadateCounter(){
+//     let rand = Math.floor(Math.random()*10)
+//     setCount((preVal)=>{
+//       console.log(preVal);
+//       if(preVal-rand>5){
+//         alert("Hi");
+//       }
+
+//       // for(let i=0;i<5;i++){
+//       //   setCount((pre)=>{
+//       //      return pre+100;
+//       //   })
+//       // }
+
+//       return rand;
+//     });
+
+//   }
+
+//   return (
+//     <div>
+//       <h1>Previous State</h1>
+//       <p>{count}</p>
+//       <button onClick={upadateCounter}>Upadate</button>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
+// -----------------------------------------------------
+// import React,{useState} from 'react'
+
+// function App() {
+//   const [count,setCount]=useState(0);
+
+//   function upadateCounter(){
+//     let rand = Math.floor(Math.random()*10)
+//     setCount((preVal)=>{
+//       console.log(preVal);
+//       return rand;
+//     });
+
+//   }
+
+//   return (
+//     <div>
+//       <h1>Previous State</h1>
+//       <p>{count}</p>
+//       <button onClick={upadateCounter}>Upadate</button>
+      
+//     </div>
+//   )
+// }
+
+// export default App
 
 
 
