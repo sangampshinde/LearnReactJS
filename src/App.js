@@ -1,9 +1,17 @@
-import React from 'react'
+
+// State with Object
+import React,{useState} from 'react';
 
 function App() {
+  const [data,setData]=useState({name:'anil',age:27});
+
   return (
     <div>
-      <h1> Previous Props  and how to use with Hooks </h1>
+      <h1>state with objects</h1>
+      <p>{data.name}</p>
+      <p>{data.age}</p>
+
+      
       
     </div>
   )
@@ -11,7 +19,27 @@ function App() {
 
 export default App
 
-// -------------------------------------------------------------------------------------------------------
+// ==========================================================================================================
+// PREVIOUS PROPS and use with hooks.
+// import React, { useState } from 'react'
+// import User5 from './components/User5'
+
+
+
+// function App() {
+//   const[count,setCount] = useState(0);
+//   return (
+//     <div>
+//       <h1> Previous Props  and how to use with Hooks </h1>
+//       <User5 count={count}/>
+//       <button onClick={()=>{setCount(Math.floor(Math.random()*10))}}>Update Counter</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// =============================================================================================================
 
 // // Previous State In Functional Component
 // // useStete setting varivale contain a callback function also as shown in example
