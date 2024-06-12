@@ -1,23 +1,37 @@
-
-// State with Object
-import React,{useState} from 'react';
+// Context API
+// help to transer data from siblings or any node or component in your apllication tree.
+import React from 'react'
 
 function App() {
-  const [data,setData]=useState({name:'anil',age:27});
-
   return (
     <div>
-      <h1>state with objects</h1>
-      <p>{data.name}</p>
-      <p>{data.age}</p>
-
-      
+      <h1>Context API</h1>
       
     </div>
   )
 }
 
 export default App
+
+// ================================================================================================================
+// // State with Object
+// import React,{useState} from 'react';
+
+// function App() {
+//   const [data,setData]=useState({name:'anil',age:27});
+
+//   return (
+//     <div>
+//       <h1>state with objects</h1>
+//       <input type="text" placeholder='enter name' value={data.name}  onChange={(e)=>{setData({name:e.target.value,age:data.age})}}/>
+//       <input type="text" placeholder='enter age' value={data.age}  onChange={(e)=>{setData({name:data.name,age:e.target.value})}}/> 
+//       <p>{data.name}</p>
+//       <p>{data.age}</p>
+//     </div>
+//   )
+// }
+
+// export default App
 
 // ==========================================================================================================
 // PREVIOUS PROPS and use with hooks.
