@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
+import { CommonContext } from './CommonContex'
 
-export default class Main extends Component {
+export default class   extends Component {
   render() {
     return (
       <div>
-        <h3>main Component</h3>
-        <CommonContext.Consumer >
-        <h1>Context Api</h1>
+        <CommonContext.Consumer>
+        {
+            ({color})=>(
+                <h1 style={{backgroundColor:color}}>Hello,This is Main Page</h1>
+            )
+        }
         </CommonContext.Consumer>
-        
       </div>
     )
   }
