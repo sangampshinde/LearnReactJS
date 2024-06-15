@@ -1,3 +1,3 @@
-import React,{createContext} from "react";
+import React, { createContext } from 'react';
 
-export const CommonContext = createContext();
+ export const CommonContext = createContext();

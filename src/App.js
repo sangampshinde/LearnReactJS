@@ -1,40 +1,23 @@
 // Context API
 // help to transer data from siblings or any node or component in your apllication tree.
- import React, { Component } from 'react'
- import { CommonContext } from './Context-api/CommonContex';
- import Main from './Context-api/Main';
-import Updatebutton from './Context-api/Updatebutton';
- 
- export default class App extends Component {
-  constructor(){
-    super();
-    
-    this.updateColor= ()=>{
-      this.setState({color:"red"})
-    }
+import React, { Component } from 'react'
+import { CommonContext } from './Context-api/CommonContex'
 
-      this.state = {
-        color:'green',
-        updateColor:this.updateColor
-      }
-
-    
-
-  }
-   render() {
-     return (
-       <div>
-        <CommonContext.Provider value={this.state}>
-          <h1>Context Api</h1>
-          <Main/>
-          <Updatebutton/>
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        
+        <CommonContext.Provider>
+        <h1>REACT Context API</h1>
         </CommonContext.Provider>
-         
-       </div>
-     )
-   }
- }
- 
+
+      </div>
+    )
+  }
+}
+
+
 
 // ================================================================================================================
 // // State with Object
