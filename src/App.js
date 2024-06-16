@@ -1,21 +1,78 @@
+// REDUX installation #3
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===========================================================================================================
+// REDUX-architecture  #2
+/* 
+
+STORE--->---
+  |        |
+REDUCER    |
+  |        |
+ACTION     |
+  |        |
+VIEW ----<--
+
+*/
+
+// =========================================================================================================
+// // REDUX-INRODUCTION #1
+
+// //what is REDUX ?
+// // constainer whwere you can strore whole application data
+// // so we call it to state management [apllication state management]
+// // it does not belong to to components state management
+
+
+
+// ================================================================================================================
 // Context API
 // help to transer data from siblings or any node or component in your apllication tree.
-import React, { Component } from 'react'
-import { CommonContext } from './Context-api/CommonContex'
+// import React, { Component } from 'react';
+// import { CommonContext } from './Context-api/CommonContex';
+// import Main from './Context-api/Main';
+// import Updatebutton from './Context-api/Updatebutton';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        
-        <CommonContext.Provider>
-        <h1>REACT Context API</h1>
-        </CommonContext.Provider>
+// export default class App extends Component {
+//   constructor() {
+//     super();
 
-      </div>
-    )
-  }
-}
+//     this.updateColor = () => {
+//       this.setState({ color: 'orange' });
+//       console.log(this.state.color);
+//     };
+
+//     this.state = {
+//       color: 'green',
+//       updateColor: this.updateColor
+//     };
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <CommonContext.Provider value={this.state}>
+//           <h1>REACT Context API</h1>
+//           <Main />
+//           {/* this button is not working */}
+//           <Updatebutton />
+          
+//         </CommonContext.Provider>
+//       </div>
+//     );
+//   }
+// }
 
 
 
